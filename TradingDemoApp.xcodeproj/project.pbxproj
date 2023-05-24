@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6344009D2A1E175400555200 /* Trader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344009C2A1E175400555200 /* Trader.swift */; };
+		6344009F2A1E39A100555200 /* TraderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6344009E2A1E39A100555200 /* TraderTableViewCell.swift */; };
+		634400A12A1E39E500555200 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634400A02A1E39E500555200 /* CommonExtensions.swift */; };
 		635777692A1DF28400CF846E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777682A1DF28400CF846E /* AppDelegate.swift */; };
 		6357776B2A1DF28400CF846E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357776A2A1DF28400CF846E /* SceneDelegate.swift */; };
 		635777722A1DF28400CF846E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635777712A1DF28400CF846E /* Assets.xcassets */; };
@@ -18,9 +21,15 @@
 		635777892A1DF58B00CF846E /* FirstScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777882A1DF58B00CF846E /* FirstScreenCoordinator.swift */; };
 		6357778D2A1DF5C800CF846E /* TopScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357778C2A1DF5C800CF846E /* TopScreenViewModel.swift */; };
 		6357778F2A1DF5ED00CF846E /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357778E2A1DF5ED00CF846E /* TopViewController.swift */; };
+		635777922A1DF74D00CF846E /* SecondScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777912A1DF74D00CF846E /* SecondScreenCoordinator.swift */; };
+		635777952A1DF7D200CF846E /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777942A1DF7D200CF846E /* TradeViewController.swift */; };
+		635777972A1DF80300CF846E /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777962A1DF80300CF846E /* TradeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6344009C2A1E175400555200 /* Trader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trader.swift; sourceTree = "<group>"; };
+		6344009E2A1E39A100555200 /* TraderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraderTableViewCell.swift; sourceTree = "<group>"; };
+		634400A02A1E39E500555200 /* CommonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
 		635777652A1DF28400CF846E /* TradingDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TradingDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635777682A1DF28400CF846E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6357776A2A1DF28400CF846E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +43,9 @@
 		635777882A1DF58B00CF846E /* FirstScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenCoordinator.swift; sourceTree = "<group>"; };
 		6357778C2A1DF5C800CF846E /* TopScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScreenViewModel.swift; sourceTree = "<group>"; };
 		6357778E2A1DF5ED00CF846E /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		635777912A1DF74D00CF846E /* SecondScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenCoordinator.swift; sourceTree = "<group>"; };
+		635777942A1DF7D200CF846E /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
+		635777962A1DF80300CF846E /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,7 @@
 			children = (
 				635777682A1DF28400CF846E /* AppDelegate.swift */,
 				6357776A2A1DF28400CF846E /* SceneDelegate.swift */,
+				635777932A1DF7AF00CF846E /* Trade */,
 				635777902A1DF63300CF846E /* Top */,
 				6357777C2A1DF4A200CF846E /* Coordinator */,
 				635777712A1DF28400CF846E /* Assets.xcassets */,
@@ -82,6 +95,7 @@
 			children = (
 				635777832A1DF4E700CF846E /* MainCoordinator.swift */,
 				635777882A1DF58B00CF846E /* FirstScreenCoordinator.swift */,
+				635777912A1DF74D00CF846E /* SecondScreenCoordinator.swift */,
 				635777872A1DF56500CF846E /* Common */,
 			);
 			path = Coordinator;
@@ -93,6 +107,7 @@
 				6357777F2A1DF4CB00CF846E /* Coordinator.swift */,
 				635777812A1DF4DB00CF846E /* TabbarController.swift */,
 				635777852A1DF54D00CF846E /* ControllerFactory.swift */,
+				634400A02A1E39E500555200 /* CommonExtensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -101,9 +116,20 @@
 			isa = PBXGroup;
 			children = (
 				6357778C2A1DF5C800CF846E /* TopScreenViewModel.swift */,
+				6344009C2A1E175400555200 /* Trader.swift */,
 				6357778E2A1DF5ED00CF846E /* TopViewController.swift */,
+				6344009E2A1E39A100555200 /* TraderTableViewCell.swift */,
 			);
 			path = Top;
+			sourceTree = "<group>";
+		};
+		635777932A1DF7AF00CF846E /* Trade */ = {
+			isa = PBXGroup;
+			children = (
+				635777942A1DF7D200CF846E /* TradeViewController.swift */,
+				635777962A1DF80300CF846E /* TradeViewModel.swift */,
+			);
+			path = Trade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +205,18 @@
 				635777862A1DF54D00CF846E /* ControllerFactory.swift in Sources */,
 				6357778D2A1DF5C800CF846E /* TopScreenViewModel.swift in Sources */,
 				635777692A1DF28400CF846E /* AppDelegate.swift in Sources */,
+				635777972A1DF80300CF846E /* TradeViewModel.swift in Sources */,
 				635777822A1DF4DB00CF846E /* TabbarController.swift in Sources */,
+				635777952A1DF7D200CF846E /* TradeViewController.swift in Sources */,
+				635777922A1DF74D00CF846E /* SecondScreenCoordinator.swift in Sources */,
 				6357776B2A1DF28400CF846E /* SceneDelegate.swift in Sources */,
 				635777842A1DF4E700CF846E /* MainCoordinator.swift in Sources */,
 				6357778F2A1DF5ED00CF846E /* TopViewController.swift in Sources */,
+				634400A12A1E39E500555200 /* CommonExtensions.swift in Sources */,
 				635777802A1DF4CB00CF846E /* Coordinator.swift in Sources */,
+				6344009D2A1E175400555200 /* Trader.swift in Sources */,
 				635777892A1DF58B00CF846E /* FirstScreenCoordinator.swift in Sources */,
+				6344009F2A1E39A100555200 /* TraderTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,24 @@ import UIKit
 
 protocol TopScreenOutput {
     
+    var topTraders: [Trader] {get}
+    
+    func updateProfitAndDeposit() -> Void
 }
 
 final class TopScreenViewModel: TopScreenOutput {
+    
+    func updateProfitAndDeposit() {
+        
+    }
+    
+    
+    var topTraders: [Trader] = []
+    
+  
+    
+    
+    
     
    
 }
