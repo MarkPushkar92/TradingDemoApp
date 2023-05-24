@@ -1,17 +1,19 @@
 //
-//  ViewController.swift
+//  TopViewController.swift
 //  TradingDemoApp
 //
 //  Created by Марк Пушкарь on 24.05.2023.
 //
 
+import Foundation
+
 import UIKit
 
-class ViewController: UIViewController {
+class TopViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .yellow
     }
 
 
