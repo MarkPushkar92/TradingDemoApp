@@ -24,7 +24,7 @@ class TopViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
+        tableView.backgroundColor = UIColor(red: 0.337, green: 0.333, blue: 0.4, alpha: 1)
         tableView.layer.cornerRadius = 10
         tableView.toAutoLayout()
         tableView.dataSource = self
@@ -38,10 +38,15 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
-     //   view.layer.backgroundColor = UIColor(red: 0.337, green: 0.333, blue: 0.4, alpha: 1).cgColor
-
         setupViews()
+        let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTradersInfo), userInfo: nil, repeats: true)
 
+    }
+    
+    @objc private func updateTradersInfo() {
+        viewModel.updateProfitAndDeposit {
+            self.tableView.reloadData()
+        }
     }
     
     init(viewModel: TopScreenViewModel) {
@@ -68,7 +73,7 @@ private extension TopViewController {
             tableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 30),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -42),
+            tableView.heightAnchor.constraint(equalToConstant: 550),
             
         ]
         NSLayoutConstraint.activate(constraints)
@@ -93,12 +98,25 @@ extension TopViewController: UITableViewDataSource {
         cell.name.text = trader.name
         cell.deposit.text = "$\(trader.deposit)"
         cell.profit.text = "$\(trader.profit)"
+        if indexPath.row % 2 != 0 {
+            cell.backgroundColor = UIColor(red: 0.337, green: 0.333, blue: 0.4, alpha: 1)
+        } else {
+            cell.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
+        }
         return cell
         
     }
     
     //MARK: EXTENSIONS TABLEVIEW DATA SOURCE (HEADER)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerview = TopTradersHeader()
+      
+        return headerview
+    }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
 }
 
 extension TopViewController: UITableViewDelegate {

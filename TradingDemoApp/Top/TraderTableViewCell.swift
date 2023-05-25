@@ -55,6 +55,7 @@ class TraderTableViewCell: UITableViewCell {
     }
     
     func setUpViews() {
+
         self.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
         self.addSubviews(number, countryFlag, name, deposit, profit)
         let constraints = [
