@@ -9,6 +9,7 @@ import Foundation
 
 
 protocol ControllerFactory {
+    
     func makeFirstScreen() -> (viewModel: TopScreenViewModel, controller: TopViewController)
     
     func makeSecondScreen() -> (viewModel: TradeViewModel, controller: TradeViewController) 

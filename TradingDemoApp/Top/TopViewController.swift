@@ -12,9 +12,20 @@ class TopViewController: UIViewController {
     
     private var viewModel: TopScreenViewModel
     
+    private var label: UILabel = {
+        let label = UILabel()
+        label.toAutoLayout()
+        label.textAlignment = .center
+        label.text = "TOP 10 Traders"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textColor = .white
+        return label
+    }()
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.backgroundColor = UIColor(red: 0.961, green: 0.961, blue: 0.961, alpha: 1)
+        tableView.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
+        tableView.layer.cornerRadius = 10
         tableView.toAutoLayout()
         tableView.dataSource = self
         tableView.delegate = self
@@ -26,10 +37,10 @@ class TopViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 0.337, green: 0.333, blue: 0.4, alpha: 1)
-        setupViews()
+        view.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
+     //   view.layer.backgroundColor = UIColor(red: 0.337, green: 0.333, blue: 0.4, alpha: 1).cgColor
 
-        
+        setupViews()
 
     }
     
@@ -46,14 +57,18 @@ class TopViewController: UIViewController {
 
 private extension TopViewController {
     func setupViews() {
-        
+        view.addSubview(label)
         view.addSubview(tableView)
         tableView.separatorStyle = .none
         let constraints = [
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 30),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -42),
             
         ]
         NSLayoutConstraint.activate(constraints)
@@ -67,12 +82,17 @@ private extension TopViewController {
 extension TopViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return viewModel.topTraders.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TraderTableViewCell
-        
+        let trader = viewModel.topTraders[indexPath.row]
+        cell.number.text = "\(indexPath.row + 1)"
+        cell.countryFlag.image = trader.flag
+        cell.name.text = trader.name
+        cell.deposit.text = "$\(trader.deposit)"
+        cell.profit.text = "$\(trader.profit)"
         return cell
         
     }
@@ -84,7 +104,7 @@ extension TopViewController: UITableViewDataSource {
 extension TopViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return 65
+      return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

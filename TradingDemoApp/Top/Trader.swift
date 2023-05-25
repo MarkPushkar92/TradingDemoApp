@@ -10,22 +10,22 @@ import UIKit
 
 struct Trader {
     let name: String
-    let country: String
+    let country: Country
     var deposit: Int
     var profit: Int
   
     var flag: UIImage? {
-        UIImage(named: country)
+        UIImage(named: country.rawValue)
     }
     
-    enum Country {
+    enum Country: String {
         case usa
         case canada
         case brazil
         case japan
         case germany
         case france
-        case newZeland
+        case newZealand
         case spain
         case india
     }
