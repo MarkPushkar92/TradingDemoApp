@@ -25,6 +25,7 @@
 		635777952A1DF7D200CF846E /* TradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777942A1DF7D200CF846E /* TradeViewController.swift */; };
 		635777972A1DF80300CF846E /* TradeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635777962A1DF80300CF846E /* TradeViewModel.swift */; };
 		636389C02A1F57890011CD70 /* TopTradersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636389BF2A1F57890011CD70 /* TopTradersHeader.swift */; };
+		6386D2102A207ACE008BFE2D /* TradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386D20F2A207ACE008BFE2D /* TradeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		635777942A1DF7D200CF846E /* TradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewController.swift; sourceTree = "<group>"; };
 		635777962A1DF80300CF846E /* TradeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeViewModel.swift; sourceTree = "<group>"; };
 		636389BF2A1F57890011CD70 /* TopTradersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTradersHeader.swift; sourceTree = "<group>"; };
+		6386D20F2A207ACE008BFE2D /* TradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				635777942A1DF7D200CF846E /* TradeViewController.swift */,
+				6386D20F2A207ACE008BFE2D /* TradeView.swift */,
 				635777962A1DF80300CF846E /* TradeViewModel.swift */,
 			);
 			path = Trade;
@@ -211,6 +214,7 @@
 				635777692A1DF28400CF846E /* AppDelegate.swift in Sources */,
 				635777972A1DF80300CF846E /* TradeViewModel.swift in Sources */,
 				635777822A1DF4DB00CF846E /* TabbarController.swift in Sources */,
+				6386D2102A207ACE008BFE2D /* TradeView.swift in Sources */,
 				635777952A1DF7D200CF846E /* TradeViewController.swift in Sources */,
 				635777922A1DF74D00CF846E /* SecondScreenCoordinator.swift in Sources */,
 				6357776B2A1DF28400CF846E /* SceneDelegate.swift in Sources */,
