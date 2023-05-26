@@ -27,7 +27,7 @@ struct ControllerFactoryImpl: ControllerFactory {
     
     func makeSecondScreen() -> (viewModel: TradeViewModel, controller: TradeViewController) {
         let viewModel = TradeViewModel()
-        let vc = TradeViewController()
+        let vc = TradeViewController(viewModel: viewModel)
         return (viewModel, vc)
     }
  

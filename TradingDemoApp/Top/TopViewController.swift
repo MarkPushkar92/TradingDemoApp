@@ -10,6 +10,8 @@ import UIKit
 
 class TopViewController: UIViewController {
     
+    weak var coordinator: FirstScreenCoordinator?
+    
     private var viewModel: TopScreenViewModel
     
     private var label: UILabel = {
@@ -39,7 +41,7 @@ class TopViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 0.11, green: 0.122, blue: 0.176, alpha: 1)
         setupViews()
-        let timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTradersInfo), userInfo: nil, repeats: true)
+        let _ = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTradersInfo), userInfo: nil, repeats: true)
 
     }
     

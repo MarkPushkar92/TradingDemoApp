@@ -25,8 +25,15 @@ class SecondScreenCoordinator: Coordinator {
     }
     
     func start() {
+        secondScreen.viewModel.showCurrencyPairPicker = {
+            self.goToCurrencyChangeScreen()
+        }
         navigation.pushViewController(secondScreen.controller, animated: true)
      
+    }
+    
+    func goToCurrencyChangeScreen() {
+        navigation.pushViewController(CurrencyPairPickerController(viewModel: secondScreen.viewModel), animated: true)
     }
     
 }
