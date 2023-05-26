@@ -79,9 +79,6 @@ class TradeView: UIView {
     }()
     
     
-    
-    
-    
     //MARK: Methods
     
     private func setupViews() {

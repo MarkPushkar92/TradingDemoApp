@@ -14,14 +14,11 @@ class CurrencyPairPickerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
     }
     
     init(viewModel: TradeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-
-
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +28,8 @@ class CurrencyPairPickerController: UIViewController {
     @objc private func returnToTradeScreen() {
         navigationController?.popToRootViewController(animated: true)
     }
+    
+    
     
 
 }
@@ -52,7 +51,6 @@ private extension CurrencyPairPickerController {
     }
 
     func setupNavigation() {
-        
         let barLabel: UILabel = {
             let view = UILabel()
             view.font = UIFont.systemFont(ofSize: 22, weight: .bold)
@@ -63,7 +61,6 @@ private extension CurrencyPairPickerController {
             return view
         }()
         
-        
         let returnButton: UIButton = {
             let button = UIButton()
             button.setBackgroundImage(UIImage(systemName: "chevron.left"), for: .normal)
@@ -72,16 +69,10 @@ private extension CurrencyPairPickerController {
             return button
         }()
        
-
         navigationItem.titleView = barLabel
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: returnButton)
         returnButton.addTarget(self, action: #selector(returnToTradeScreen), for: .touchUpInside)
-        
-
-        
-
     }
-    
 }
 
 

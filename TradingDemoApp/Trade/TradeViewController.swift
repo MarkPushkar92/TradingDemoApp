@@ -20,7 +20,6 @@ class TradeViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         tradeView.currencyButton.addTarget(self, action: #selector(pickNewCurrencyPair), for: .touchUpInside)
-        
     }
     
     init(viewModel: TradeViewModel) {
@@ -39,12 +38,11 @@ class TradeViewController: UIViewController {
     
     private func applyData() {
         DispatchQueue.main.async {
-            self.tradeView.webView.load(URLRequest(url: URL(string: self.viewModel.urlStr)!))
+//            self.tradeView.webView.load(URLRequest(url: URL(string: self.viewModel.urlStr)!))
+            self.tradeView.webView.load(URLRequest(url: URL(string: self.viewModel.getURL(pair: self.viewModel.currentCurrencyPair))!))
             
         }
     }
-
-
 }
 
 private extension TradeViewController {
