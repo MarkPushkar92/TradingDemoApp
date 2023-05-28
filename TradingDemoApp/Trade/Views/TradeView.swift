@@ -42,7 +42,7 @@ class TradeView: UIView {
         return label
     }()
         
-    private let balanceLabel: UILabel = {
+    let balanceLabel: UILabel = {
         let label = UILabel()
         label.toAutoLayout()
         label.textAlignment = .center
@@ -69,7 +69,7 @@ class TradeView: UIView {
         button.layer.cornerRadius = 15
         return button
     }()
-    
+
     private let imageChevron: UIImageView = {
         let imageView = UIImageView()
         imageView.tintColor = .white
@@ -77,7 +77,46 @@ class TradeView: UIView {
         imageView.toAutoLayout()
         return imageView
     }()
-    
+
+    let timerView: TimerBidView = {
+        let timerView = TimerBidView()
+        timerView.label.text = "Timer"
+        timerView.textField.text = "00:00"
+        timerView.textField.placeholder = "Set timer"
+        return timerView
+    }()
+
+    let bidView: TimerBidView = {
+        let bidView = TimerBidView()
+        bidView.label.text = "Investment"
+        bidView.textField.text = "1,000"
+        bidView.textField.placeholder = "Set bid"
+        return bidView
+    }()
+
+    let sellButton: UIButton = {
+        let button = UIButton()
+        button.toAutoLayout()
+        button.backgroundColor = UIColor(red: 0.996, green: 0.239, blue: 0.263, alpha: 1)
+        button.layer.cornerRadius = 12
+        button.setTitle("  Sell", for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .regular)
+        button.layer.cornerRadius = 15
+        return button
+    }()
+
+    let buyButton: UIButton = {
+        let button = UIButton()
+        button.toAutoLayout()
+        button.backgroundColor = UIColor(red: 0.208, green: 0.725, blue: 0.447, alpha: 1)
+        button.layer.cornerRadius = 12
+        button.setTitle("  Buy", for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24, weight: .regular)
+        button.layer.cornerRadius = 15
+        return button
+    }()
     
     //MARK: Methods
     
@@ -85,7 +124,11 @@ class TradeView: UIView {
         self.toAutoLayout()
         self.backgroundColor = .white
         self.layer.backgroundColor = UIColor(red: 0.071, green: 0.086, blue: 0.161, alpha: 1).cgColor
-        self.addSubviews(tradeLabel, balanceView, balanceTextLabel, balanceLabel, webView, currencyButton, imageChevron)
+        self.addSubviews(tradeLabel, balanceView, balanceTextLabel, balanceLabel, webView, currencyButton, imageChevron, timerView, bidView, sellButton, buyButton)
+        
+        self.addSubviews(tradeLabel, balanceView, balanceTextLabel, balanceLabel, webView)
+        
+        
         let constrains = [
 
             tradeLabel.topAnchor.constraint(equalTo: self.topAnchor),
@@ -111,11 +154,31 @@ class TradeView: UIView {
             currencyButton.widthAnchor.constraint(equalToConstant: 315),
             currencyButton.heightAnchor.constraint(equalToConstant: 54),
             currencyButton.topAnchor.constraint(equalTo: webView.bottomAnchor, constant: 20),
-            
+
             imageChevron.centerYAnchor.constraint(equalTo: currencyButton.centerYAnchor),
             imageChevron.heightAnchor.constraint(equalToConstant: 15),
             imageChevron.widthAnchor.constraint(equalToConstant: 7),
-            imageChevron.trailingAnchor.constraint(equalTo: currencyButton.trailingAnchor, constant: -18)
+            imageChevron.trailingAnchor.constraint(equalTo: currencyButton.trailingAnchor, constant: -18),
+
+            timerView.leadingAnchor.constraint(equalTo: currencyButton.leadingAnchor),
+            timerView.topAnchor.constraint(equalTo: currencyButton.bottomAnchor, constant: 10),
+            timerView.widthAnchor.constraint(equalToConstant: 150),
+            timerView.heightAnchor.constraint(equalToConstant: 54),
+
+            bidView.trailingAnchor.constraint(equalTo: currencyButton.trailingAnchor),
+            bidView.topAnchor.constraint(equalTo: currencyButton.bottomAnchor, constant: 10),
+            bidView.widthAnchor.constraint(equalToConstant: 150),
+            bidView.heightAnchor.constraint(equalToConstant: 54),
+
+            sellButton.leadingAnchor.constraint(equalTo: currencyButton.leadingAnchor),
+            sellButton.topAnchor.constraint(equalTo: timerView.bottomAnchor, constant: 10),
+            sellButton.widthAnchor.constraint(equalToConstant: 150),
+            sellButton.heightAnchor.constraint(equalToConstant: 54),
+
+            buyButton.trailingAnchor.constraint(equalTo: currencyButton.trailingAnchor),
+            buyButton.topAnchor.constraint(equalTo: bidView.bottomAnchor, constant: 10),
+            buyButton.widthAnchor.constraint(equalToConstant: 150),
+            buyButton.heightAnchor.constraint(equalToConstant: 54),
 
         ]
         NSLayoutConstraint.activate(constrains)
