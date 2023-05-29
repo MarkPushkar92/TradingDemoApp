@@ -64,6 +64,8 @@ class TopViewController: UIViewController {
 
 private extension TopViewController {
     func setupViews() {
+        tabBarController?.tabBar.isHidden = false
+
         view.addSubview(label)
         view.addSubview(tableView)
         tableView.separatorStyle = .none

@@ -164,6 +164,17 @@ class TradeViewController: UIViewController {
         }
     }
     
+    @objc private func buy() {
+        let alert = UIAlertController(title: "Successfully", message: "Operation finished successfully", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        if let intBid = Int(tradeView.bidView.textField.text?.replacingOccurrences(of: ",", with: "") ?? "0") {
+            viewModel.buy(bid: intBid)
+            tradeView.balanceLabel.text = String(viewModel.balance)
+        }
+    }
+    
     //MARK: KeyBoard Setup
 
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -210,6 +221,7 @@ private extension TradeViewController {
         tradeView.timerView.plusButton.addTarget(self, action: #selector(increaseTimeForABid), for: .touchUpInside)
         tradeView.bidView.minusButton.addTarget(self, action: #selector(reduceABid), for: .touchUpInside)
         tradeView.bidView.plusButton.addTarget(self, action: #selector(increaseABid), for: .touchUpInside)
+        tradeView.buyButton.addTarget(self, action: #selector(buy), for: .touchUpInside)
 
 
         

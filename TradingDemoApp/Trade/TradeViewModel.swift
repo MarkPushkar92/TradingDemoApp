@@ -17,7 +17,7 @@ protocol TradeOutput {
     
     func chooseCurrencyPair(newPair: String) -> ()
     
-    func buy() -> ()
+    func buy(bid: Int) -> ()
     
     var onTapShowNextModule: () -> Void { get }
     
@@ -37,7 +37,14 @@ final class TradeViewModel: TradeOutput {
         currentCurrencyPair = newPair.replacingOccurrences(of: " / ", with: "")
     }
     
-    func buy() {
+    func buy(bid: Int) {
+        balance -= bid
+        let randomResult = Bool.random()
+        if randomResult {
+            balance += Int(Double(bid) * 1.7)
+        } else {
+            return
+        }
     }
     
     var showCurrencyPairPicker: (() -> Void)?

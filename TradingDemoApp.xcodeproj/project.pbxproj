@@ -28,6 +28,7 @@
 		636389C02A1F57890011CD70 /* TopTradersHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636389BF2A1F57890011CD70 /* TopTradersHeader.swift */; };
 		6386D2102A207ACE008BFE2D /* TradeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6386D20F2A207ACE008BFE2D /* TradeView.swift */; };
 		63A307982A21D79A00BF8331 /* TimerBidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A307972A21D79A00BF8331 /* TimerBidView.swift */; };
+		63E083BE2A24745500B2B162 /* PreLoaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E083BD2A24745500B2B162 /* PreLoaderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		636389BF2A1F57890011CD70 /* TopTradersHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTradersHeader.swift; sourceTree = "<group>"; };
 		6386D20F2A207ACE008BFE2D /* TradeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeView.swift; sourceTree = "<group>"; };
 		63A307972A21D79A00BF8331 /* TimerBidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBidView.swift; sourceTree = "<group>"; };
+		63E083BD2A24745500B2B162 /* PreLoaderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoaderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				635777832A1DF4E700CF846E /* MainCoordinator.swift */,
 				635777882A1DF58B00CF846E /* FirstScreenCoordinator.swift */,
 				635777912A1DF74D00CF846E /* SecondScreenCoordinator.swift */,
+				63E083BD2A24745500B2B162 /* PreLoaderController.swift */,
 				635777872A1DF56500CF846E /* Common */,
 			);
 			path = Coordinator;
@@ -228,6 +231,7 @@
 				635777692A1DF28400CF846E /* AppDelegate.swift in Sources */,
 				635777972A1DF80300CF846E /* TradeViewModel.swift in Sources */,
 				635777822A1DF4DB00CF846E /* TabbarController.swift in Sources */,
+				63E083BE2A24745500B2B162 /* PreLoaderController.swift in Sources */,
 				6386D2102A207ACE008BFE2D /* TradeView.swift in Sources */,
 				635777952A1DF7D200CF846E /* TradeViewController.swift in Sources */,
 				630E2FD82A20DD8600C1F78E /* CurrencyPairPickerController.swift in Sources */,
